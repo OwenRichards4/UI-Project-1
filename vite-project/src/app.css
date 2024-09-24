@@ -1,0 +1,660 @@
+  /*html {
+    overflow-y: hidden;
+}*/
+body {
+  position: relative;
+
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  height: 100%;
+
+  color: white;
+  background-color: rgb(26, 26, 26);
+  background-image: url('../src/images/backgrounds/background-image.png');
+
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  max-height: 100vh;
+}
+
+header {
+  position: relative;
+
+  top: 0;
+  left: 7.5%;
+  width: 85%;
+  height: fit-content;
+
+  /*background-color: red;*/
+  color: white;
+  
+  display: flex;
+  flex-direction: row;    
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 200%;
+}
+
+
+nav ul {
+  position: relative;
+
+  width: fit-content;
+  height: fit-content;
+
+  top: 13px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 90%;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+
+main {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 24px;
+
+  bottom: 30px;
+  left: 4%;
+  width: 92%;
+
+  height: 80vh;
+}
+
+main .original-line {
+  /* position: relative; 
+
+  top: 0px; 
+  left: 2.5%;
+
+  fill: white; */
+}
+
+.graph-box {
+  position: relative;
+
+  border: white 2px solid;
+  padding: 20px;
+
+  width: 80%;
+
+  background-color: rgb(22, 22, 22);
+
+  box-shadow: white 0px 3px 3px;
+}
+
+.add-game-box {
+  position: relative;
+
+  border: white 2px solid;
+  padding: 0px 20px;
+  align-items: center;
+
+  width: 20%;
+
+  background-color: rgb(22, 22, 22);
+  box-shadow: white 0px 3px 3px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.top-group {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;    
+
+  top: 5px;
+  height: 30%;
+  max-height: 50%;
+
+  max-width: 100%;
+  width: 100%;
+
+  gap: 20px;
+}
+
+.chart {
+  position: relative;
+
+  max-width:1300px; 
+
+  bottom: 40px;
+  z-index: 1;
+}
+
+.add-game-questions {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.lower-group {
+  position: relative;
+
+  width: 100%;
+  height: 70%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 0px;
+  bottom: 10px;
+
+  gap: 20px; 
+}
+
+.pie-chart {
+  position: relative;
+  height: 45%;
+  top: 10px;
+
+  border: 2px solid white;
+  box-shadow: 0px 3px 3px white;
+  background-color: rgb(22, 22, 22);
+
+  align-items: center;
+}
+
+.activities {
+  position: relative;
+
+  width: 100%;
+  height: 55%;
+
+  text-align: center;
+
+  border: white 2px solid;
+  box-shadow: white 0px 3px 3px;
+  background-color: rgb(22, 22, 22);
+
+  align-items: center;
+}
+
+.activitiesItem {
+  position: relative; 
+  display: flex; 
+  flex-direction: row; 
+  gap: 10px; 
+  
+  left: 15%;
+}
+
+.activitiesCheckbox {
+  position: relative; 
+  height: 80%;
+
+  accent-color: red;
+}
+
+.past-stats {
+  position: relative;
+
+  width: 70%;
+  height: 97%;
+  
+  overflow-y: auto;
+  scrollbar-color: white rgb(20,20,20);
+
+  border: 2px solid white;
+  box-shadow: white 0px 3px 3px;
+  
+  background-color: rgb(22, 22, 22);
+  margin-top: 10px;
+}
+
+.data-stats {
+  position: relative;
+  left: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gamemode {
+  position: relative;
+  left: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  position: relative;
+  top: 58px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  padding-right: 20px;
+  padding-bottom: 20px;;
+}
+
+.stats-header {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-evenly;
+  padding-right: 20px;
+  padding-bottom: 20px;;
+}
+
+.stats-underline-1 {
+  position: absolute;
+
+  bottom: 256px;
+  fill: white;
+
+  opacity: 50%;
+
+  right: 4%;
+  width: 95%;
+}
+.stats-underline-2 {
+  position: absolute;
+
+  bottom: 195px;
+  fill: white;
+
+  opacity: 50%;
+
+  right: 4%;
+  width: 95%;
+}
+.stats-underline-3 {
+  position: absolute;
+
+  bottom: 137px;
+  fill: white;
+
+  opacity: 50%;
+
+  right: 4%;
+  width: 95%;
+}
+.stats-underline-4 {
+  position: absolute;
+
+  bottom: 78px;
+  fill: white;
+
+  opacity: 50%;
+
+  right: 4%;
+  width: 95%;
+}
+.stats-underline-5 {
+  position: absolute;
+
+  bottom: 312px;
+  fill: white;
+
+  opacity: 50%;
+
+  right: 4%;
+  width: 95%;
+}
+
+.gamemode:hover, .group:hover, .groupCheckbox:hover, .addstats:hover, .list-item:hover, .car-selection:hover, .octane-text:hover, .fennec-text:hover, .dominus-text:hover, .other-text:hover, .gamemode-checkbox {
+  cursor: pointer;
+}
+
+.group-checkbox-label {
+  font-size: 140%;
+}
+
+
+.addstats {
+  position: relative;
+
+  padding: 10px 20px;
+  background-color: rgb(200,40,50);
+  color: white;
+  border: 2px solid rgb(22, 22, 22);
+
+  left: 15%;
+  width: 70%;
+  margin-top: 20px;
+
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.addstats:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(200,40,50);
+}
+
+.popup {
+  position: absolute;
+  left: 5%;
+  top: 10%;
+
+  overflow: hidden;
+
+  width: 87%;
+  height: fit-content;
+
+  background-color: rgb(22, 22, 22);
+  border: 3px solid white;
+  box-shadow: white 0px 3px 3px;
+
+  visibility: hidden;
+
+  color: white;
+  padding: 0px 20px 40px 20px;
+}
+
+.game-stats {
+  position: relative;
+
+  border: 2px solid white;
+
+  max-width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  padding: 20px 0;
+
+  border-radius: 20px;
+}
+
+.input-items {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+}
+
+.input-bottom-half {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  
+  padding: 20px 0;
+}
+
+.car-input {
+  position: relative;
+  
+  width: 80%;
+  height: fit-content;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  gap: 20px;
+
+  border: white 2px solid;
+  border-radius: 20px;
+}
+
+.car-selection {
+  width: auto;
+}
+
+.car-img {
+  border: white solid 2px;
+  border-radius: 20px;
+}
+
+.other {
+  position: relative; 
+  width: auto; 
+  height: auto; 
+  
+  border: solid 2px white; 
+  border-radius: 20px; background-color: rgb(0, 0, 0); 
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  font-size: calc(10vw);
+  
+  cursor: pointer;
+}
+
+.car-img:hover, .other:hover {
+  border: 2px solid rgb(200,40,50);
+  cursor: pointer;
+}
+
+
+
+.gamemode-and-buttons {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 20%;
+}
+
+.input-gamemode {
+  position: relative;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 0 20px 20px 20px;
+}
+
+.submit-button, .cancel-button {
+  padding: 10px 25px;
+  color: white;
+  border: 2px solid rgb(22, 22, 22)
+}
+
+.submit-button {
+  background-color: rgb(38, 182, 25);
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.submit-button:hover, .cancel-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.submit-button:hover {
+  border: 2px solid rgb(38, 182, 25)
+} 
+
+.cancel-button:hover {
+  border: 2px solid rgb(200,40,50)
+}
+
+.cancel-button {
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.buttons {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  
+  width: 100%;
+}
+
+.error {
+  position: relative;
+  background-color: red;
+  width: 100%;
+  text-align: center;
+
+  padding: 2px 0;
+
+  visibility: hidden;
+
+}
+
+.headers {
+  position: relative;
+
+  list-style-type: none;
+
+  left: 2.2%;
+  width: 95%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+
+  font-size: 150%;
+}
+
+.content {
+  position: relative;
+  bottom: 120px;
+}
+
+.date-hist {
+  border-bottom: 2px solid rgb(255,255, 255, 0.5);
+  padding-bottom: 10px;
+  border-radius: 1px;
+}
+
+.container {
+  position: relative;
+
+  background-color: rgb(22, 22, 22);
+  padding: 20px;
+  
+  border: 2px solid white;
+  width: 100%;
+}
+
+.history {
+  position: relative;
+  list-style: none;
+
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-around; 
+
+  line-height: 20px;
+
+  padding: 20px;
+  bottom: 80px;
+}
+
+.newUL {
+  position: relative;
+  display: grid;
+
+  list-style-type: none;
+
+  grid-template-columns: auto auto auto auto auto auto auto;
+  row-gap: 20px;
+  column-gap: 10%;
+
+  font-size: 120%;
+
+  border: 2px solid white;
+  border-radius: 20px;
+
+  padding: 20px;
+  
+}
+
+footer {
+  position: relative;
+  display: flex;
+  top: 0px;
+
+  height: fit-content;
+
+  gap: 300px;
+  font-size: 130%;
+
+  justify-content: center;
+}
+
+.edit {
+  position: relative;
+  top: 59px;
+}
+
+.edit:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.goalsButton {
+  position: relative;
+
+  padding: 10px 20px;
+  background-color: rgb(200,40,50);
+  color: white;
+  border: 2px solid rgb(22, 22, 22);
+
+  left: 15%;
+  width: 70%;
+  margin-top: 10px;
+
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.goalsButton:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(200,40,50);
+}
+
+.error3 {
+  width: 80%;
+  left: 10%;
+  margin-top: 10px;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
