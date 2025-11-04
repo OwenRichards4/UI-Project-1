@@ -255,6 +255,8 @@ let arr = [
           }]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false
         //legend: {display: false}
       }
     });
@@ -571,7 +573,7 @@ let arr = [
         newElement.id = "groupOptions";
         document.getElementById("group-input").appendChild(newElement);
         group = groupName;          
-        document.getElementById('error2').style.visibility = "hidden"; 
+        document.getElementById('error2').style.display = "none"; 
 
         localStorage.setItem("groups", group)
 
@@ -579,7 +581,7 @@ let arr = [
         document.getElementById("popup").style.visibility =  "visible";
       } else {
         // name was NOT added to text box
-        document.getElementById('error2').style.visibility = "visible";
+        document.getElementById('error2').style.display = "block";
         document.getElementById('lower-group').style.filter = "blur(0px)";
         document.getElementById('top-group').style.filter = "blur(0px)";
         document.getElementById('header').style.filter = "blur(0px)";
@@ -904,7 +906,7 @@ let arr = [
         newElement.id = "groupOptions";
         document.getElementById("group-input").appendChild(newElement);
         group = groupName;          
-        document.getElementById('error2').style.visibility = "hidden"; 
+        document.getElementById('error2').style.display = "none"; 
 
         localStorage.setItem("groups", group)
 
@@ -912,7 +914,7 @@ let arr = [
         document.getElementById("popup").style.visibility =  "visible";
       } else {
         // name was NOT added to text box
-        document.getElementById('error2').style.visibility = "visible";
+        document.getElementById('error2').style.display = "block";
         document.getElementById('lower-group').style.filter = "blur(0px)";
         document.getElementById('top-group').style.filter = "blur(0px)";
         document.getElementById('header').style.filter = "blur(0px)";
@@ -972,7 +974,7 @@ let arr = [
 </script>
 
 <header id='header'>
-  <h1 style="position: relative; min-width: 60%;">Rocket League Statistics Tracker</h1>
+  <h1 style="position: relative; min-width: 60%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin: 0;">Rocket League Statistics Tracker</h1>
   <nav>
     <ul style="list-style: none;">
       <div class="list-item">
@@ -986,12 +988,12 @@ let arr = [
       </div>
       <li>|</li>-->
       <div class="list-item">
-        <button on:click={themeChange}>Theme Toggle</button>
+        <button on:click={themeChange} style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Theme Toggle</button>
       </div>
     </ul>
   </nav>
 </header>
-<svg class="original-line" width="95%" height="2px" style="position: relative; left: 2.5%; bottom: 48px;">
+<svg class="original-line" width="92%" height="2px" style="position: relative; left: 4%; bottom: 10px;">
   <rect width="100%" height="100%" fill="white" ></rect>
 </svg>
 <main>
@@ -1007,7 +1009,7 @@ let arr = [
           </div>
           <div>
             <div style="display: flex; flex-direction: row; justify-content: end; margin-right: 20px; z-index: 2;">
-              <label id="labels" for="gamemode" style:backgroundColor={backColor} style:color={backColor}>Category</label>
+              <label id="labels" for="gamemode" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" style:backgroundColor={backColor} style:color={backColor}>Category</label>
               <select on:change={graphChange} bind:value={gamemodeSelection} id="gamemode2" name="gamemode" class="gamemode">
                 <option value="points">Points</option>
                 <option value="goals">Goals</option>
@@ -1019,12 +1021,12 @@ let arr = [
           </div>
         </div>
         <br><br>
-        <canvas class="chart" id="myChart" bind:this={chartCanvas} style=" height:100%; width:100%;"></canvas>
+        <canvas class="chart" id="myChart" bind:this={chartCanvas}></canvas>
       </div>
       <div class="add-game-box" id="add-game-box">
-        <h2 id="headerEle" style="font-size: 180%; " style:color={backColor}>Add a new game</h2>
+        <h2 id="headerEle" style="font-size: 180%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin: 0 auto;" style:color={backColor}>Add a new game</h2>
         
-        <div id="group-stuff" style="padding: 0 0 15px 0; display: flex; flex-direction: row; width:fit-content; justify-content: space-evenly;">
+        <div id="group-stuff" style="padding: 0; display: flex; flex-direction: row; width:fit-content; justify-content: space-evenly;">
           <label id="labels" style="font-size: 140%;" for="group-input" style:backgroundColor={backColor} style:color={backColor}>Group</label>
           <select style="font-size: 100%; margin-left: 5px; width: 30%;" name="group" class="group" id="group-input" bind:value={groupOption}> 
             <option id="groupOptions" value=""></option>
@@ -1037,9 +1039,9 @@ let arr = [
           {/if}
           
         </div>
-        <div style="position: relative; width: 100%; display: flex; flex-direction: column; justify-content: start; align-items: start; bottom:10px;">
+        <div style="position: relative; width: 100%; display: flex; flex-direction: column; justify-content: start; align-items: start;">
             <button style="position: relative;" class="addstats" on:click={addStats}>Add new stats</button>
-            <div class="error2" id="error2" style="position: relative; text-align: center; background-color: red; padding: 2px 0; visibility: hidden; width: 60%; left: 20%; margin-top: 10px;"> New Group Name Needed</div>
+            <div class="error2" id="error2" style="position: relative; text-align: center; background-color: red; padding: 2px 0; display: none; width: 60%; left: 20%; margin-top: 10px;"> New Group Name Needed</div>
         </div>
       </div>
   </div>
@@ -1189,8 +1191,8 @@ let arr = [
       <div class="pie-chart" id="pie-chart" style="overflow: hidden; width: 100%;">
         <h2 id="headerEle" style="text-align: center;" style:color={backColor}>Goals</h2>
         
-        <div style="display: flex; flex-direction: row; justify-content: center; gap: 20px;">
-          <label id="labels" for="goalSelection" style:backgroundColor={backColor} style:color={backColor}>Category</label>
+        <div style="display: flex; flex-direction: row; justify-content: center; gap: 5px;">
+          <label id="labels" for="goalSelection" style="" style:backgroundColor={backColor} style:color={backColor}>Category</label>
           <select id="goalSelection" name="goalSelection" class="goalSelection" bind:value={goalSelection}>
             <option value="points">Points</option>
             <option value="goals">Goals</option>
@@ -1198,7 +1200,7 @@ let arr = [
             <option value="saves">Saves</option>
             <option value="shots">Shots</option>
           </select>
-          <input id="goalValue" placeholder="Value" bind:value={goalValue}>
+          <input id="goalValue" placeholder="Value" style="width: 50px;" bind:value={goalValue}>
         </div>
 
         <button type="button" class="goalsButton" on:click={() => createGoal(goalSelection)}>Set a Goal</button>
@@ -1211,7 +1213,7 @@ let arr = [
           <input id="activitiesName" bind:value={activityName} placeholder="new activity name" style="position: relative; height: fit-content; display: none; left: 10px;">
           <button id="activitiesButton" style="position: relative; height: fit-content; display: none; left: 10px;" on:click={createActivity}>Add</button>
         </div>
-        <div id="activitesList" style="position: relative; display: grid; grid-template-columns: auto auto auto; gap: 20px; width: 100%;">
+        <div id="activitesList" class="activitiesList" style="position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); just-content: center; align-items: center; gap: 20px; width: 90%; left: 5%;">
           <div class="activitiesItem">
             <input class="activitiesCheckbox" id="pointsCheck" type="checkbox" bind:checked={pointsActivityCheck}>
             <label id="actLabel" for="pointsCheck" style:color={backColor}>Points</label>
@@ -1241,7 +1243,7 @@ let arr = [
             <label id="actLabel" for="gamemodeCheck" style:color={backColor}>Gamemode</label>
           </div>
           <div id="lastItem" class="activitiesItem">
-            <label id="actLabel" on:click={() => addActivity()} style="cursor: pointer;" style:backgroundColor={backColor}>Add Activity</label>
+            <p id="actLabel" class="addActivityLabel" on:click={() => addActivity()} style="cursor: pointer;" style:backgroundColor={backColor}>Add Activity</p>
           </div>
         </div>
       </div>
